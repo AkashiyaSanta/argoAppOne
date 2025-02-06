@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: app1-job
+  name: job1
   namespace: negi
 spec:
   completions: 10  # 実行回数（1回実行される）
@@ -9,14 +9,20 @@ spec:
   template:
     metadata:
       labels:
-        app: app1
+        app: job1
     spec:
       containers:
-        - name: app1
-          image: negis:latest
-          imagePullPolicy: Never
-          resources:
-            limits:
-              memory: 128Mi
-              cpu: "1"
-      restartPolicy: OnFailure  # 失敗した場合に再試行する
+        - name: job1
+          image: python:3.9-slim
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+          command:
+            - "python"
+            - "-c"
+            - |
+              import logging
+              logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+              logging.info("Hello from App2")
+      restartPolicy: OnFailure  # Jobが失敗した場合に再試行する設定
+      
