@@ -8,8 +8,9 @@ spec:
   parallelism: 2
   template:
     metadata:
+      name: job1-template
       labels:
-        app: job1
+        job: job1
     spec:
       containers:
         - name: job1
