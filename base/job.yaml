@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        job: job1
+        app: job1
     spec:
       containers:
         - name: job1
