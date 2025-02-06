@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: my-jobApp1-2
+  name: my-job2
   namespace: negi
   annotations:
     argocd.argoproj.io/hook: PostSync
@@ -11,7 +11,7 @@ spec:
   template:
     spec:
       containers:
-      - name: jobApp1-2
+      - name: job2
         image: python:3.9-slim
         env:
           - name: PYTHONUNBUFFERED
