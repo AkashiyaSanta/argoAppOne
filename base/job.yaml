@@ -4,8 +4,8 @@ metadata:
   name: job1
   namespace: negi
 spec:
-  completions: 10  # 実行回数（1回実行される）
-  parallelism: 2   # 同時に実行するポッド数
+  completions: 10
+  parallelism: 2
   template:
     metadata:
       labels:
