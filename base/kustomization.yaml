@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - job.yaml
   - deployment.yaml
-namespace: k6-operator-system
