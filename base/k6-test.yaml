@@ -4,7 +4,7 @@ metadata:
   namespace: k6-test
   name: test-load
 spec:
-  parallelism: 5
+  parallelism: 2
   script:
     configMap:
       name: k6-script
