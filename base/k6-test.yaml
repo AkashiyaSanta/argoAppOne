@@ -3,6 +3,8 @@ kind: TestRun
 metadata:
   namespace: k6-test
   name: test-load
+  annotations:
+    kubectl.kubernetes.io/restartedAt: "$(date +%s)"  # 毎回更新されるタイムスタンプ
 spec:
   parallelism: 1
   script:
