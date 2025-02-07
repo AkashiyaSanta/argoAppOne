@@ -2,9 +2,12 @@ apiVersion: k6.io/v1alpha1
 kind: TestRun
 metadata:
   namespace: k6-test
-  name: test-load
-  annotations:
-    kubectl.kubernetes.io/restartedAt: "$(date +%s)"  # 毎回更新されるタイムスタンプ
+  name: test-load-{{ timestamp }}  # 毎回異なる名前にする
+metadata:
+  namespace: k6-test
+  # name: test-load
+  # annotations:
+  #   kubectl.kubernetes.io/restartedAt: "$(date +%s)"  # 毎回更新されるタイムスタンプ
 spec:
   parallelism: 1
   script:
