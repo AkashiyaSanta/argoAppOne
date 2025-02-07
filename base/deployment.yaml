@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k6-operator
-  namespace: negi  # 修正: `default` → `negi`
+  namespace: k6-operator-system
 spec:
   replicas: 1
   selector:
