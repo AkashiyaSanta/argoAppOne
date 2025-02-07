@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - job.yaml
   - deployment.yaml
-namespace: negi
+namespace: k6-operator-system
