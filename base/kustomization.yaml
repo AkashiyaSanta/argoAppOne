@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: negi
 resources:
   - job.yaml
+  - deployment.yaml
