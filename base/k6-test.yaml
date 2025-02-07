@@ -2,7 +2,7 @@ apiVersion: k6.io/v1alpha1
 kind: TestRun
 metadata:
   namespace: k6-test
-  name: test-load-$(TIMESTAMP)
+  name: test-load-00000000
 spec:
   parallelism: 1
   script:
