@@ -1,7 +1,6 @@
 apiVersion: k6.io/v1alpha1
 kind: TestRun
 metadata:
-  namespace: k6-test-1
   name: test-load-000
 spec:
   parallelism: 3
