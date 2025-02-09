@@ -6,18 +6,15 @@ metadata:
   name: test-load-001
   namespace: k6-test-1
 spec:
-  parallelism: 2
+  parallelism: 4
   script:
     configMap:
+      name: k6-test
       file: test.js
-      name: k6-script
-  initializer: 
-    initContainers:
-      - image: busybox:latest
-        command: ["sh", "-c", "echo 'is part of initializer pod'"]
   runner:
     initContainers:
-      - image: busybox:latest
-        command: ["sh", "-c", "echo 'is part of all 4 testrun pods'"]
+      - name: init-runner
+        image: busybox:latest
+        command: ["sh", "-c", "echo 'Initializing before K6 test'"]
     image: negis:latest
     imagePullPolicy: Never
