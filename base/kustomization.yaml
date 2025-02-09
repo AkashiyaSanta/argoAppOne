@@ -3,7 +3,3 @@ kind: Kustomization
 namespace: k6-test
 resources:
   - k6-test.yaml
-configMapGenerator:
-  - name: test-config
-    literals:
-      - TIMESTAMP=$(date +%s)
