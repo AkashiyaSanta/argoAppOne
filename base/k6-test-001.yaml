@@ -1,0 +1,15 @@
+apiVersion: k6.io/v1alpha1
+kind: TestRun
+metadata:
+  labels:
+    app.kubernetes.io/instance: negi-app
+  name: test-load-001
+  namespace: k6-test-1
+spec:
+  image: yourusername/custom-k6:latest
+  imagePullPolicy: Never
+  parallelism: 3
+  script:
+    configMap:
+      file: test.js
+      name: k6-script
