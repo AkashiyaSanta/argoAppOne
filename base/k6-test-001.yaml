@@ -9,8 +9,8 @@ spec:
   parallelism: 4
   script:
     configMap:
-      name: k6-test
       file: test.js
+      name: k6-script
   runner:
     initContainers:
       - name: init-runner
