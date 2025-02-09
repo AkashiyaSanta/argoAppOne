@@ -5,7 +5,9 @@ metadata:
   name: test-load-000
 spec:
   parallelism: 3
+  image: yourusername/custom-k6:latest
   script:
     configMap:
       name: k6-script
       file: test.js
+  replicas: 1  
