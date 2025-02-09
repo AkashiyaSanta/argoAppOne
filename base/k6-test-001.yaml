@@ -14,10 +14,17 @@ spec:
   
   initializer: 
     initContainers:
-      - name: init-pod
+      - name: init-initializer-log
         image: busybox:latest
         imagePullPolicy: Never
         command: ["sh", "-c", "echo 'is part of initializer pod'"]      
+
+  starter: 
+    initContainers:
+      - name: init-starter-log
+        image: busybox:latest
+        imagePullPolicy: Never
+        command: ["sh", "-c", "echo 'is part of starter pod'"]      
 
   runner:
     initContainers:
