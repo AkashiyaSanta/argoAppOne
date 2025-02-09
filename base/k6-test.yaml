@@ -5,6 +5,7 @@ metadata:
 spec:
   parallelism: 3
   image: yourusername/custom-k6:latest
+  imagePullPolicy: Never
   script:
     configMap:
       name: k6-script
