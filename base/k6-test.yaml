@@ -9,4 +9,3 @@ spec:
     configMap:
       name: k6-script
       file: test.js
-  replicas: 1  
