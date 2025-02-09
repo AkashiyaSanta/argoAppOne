@@ -11,6 +11,10 @@ spec:
     configMap:
       file: test.js
       name: k6-script
+  initializer: 
+    initContainers:
+      - image: busybox:latest
+        command: ["sh", "-c", "echo 'is part of initializer pod'"]      
   runner:
     initContainers:
       - name: init-runner
