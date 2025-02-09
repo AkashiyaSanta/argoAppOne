@@ -3,7 +3,7 @@ kind: TestRun
 metadata:
   labels:
     app.kubernetes.io/instance: negi-app
-  name: test-load-1000
+  name: test-load-00001
   namespace: k6-test-1
 spec:
   
