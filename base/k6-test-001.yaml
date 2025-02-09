@@ -15,7 +15,7 @@ spec:
   initializer: 
     initContainers:
       - name: init-pod
-      - image: busybox:latest
+        image: busybox:latest
         imagePullPolicy: Never
         command: ["sh", "-c", "echo 'is part of initializer pod'"]      
 
