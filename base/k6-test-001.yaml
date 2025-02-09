@@ -3,11 +3,11 @@ kind: TestRun
 metadata:
   labels:
     app.kubernetes.io/instance: negi-app
-  name: test-load-00001
+  name: test-load-100000
   namespace: k6-test-1
 spec:
   
-  parallelism: 4
+  parallelism: 3
   
   script:
     configMap:
@@ -18,14 +18,13 @@ spec:
     initContainers:
       - name: init-initializer-log
         image: busybox:latest
-        imagePullPolicy: IfNotPresent
         command: ["sh", "-c", "echo 'is part of initializer pod'"]      
 
   runner:
+
     initContainers:
       - name: init-runner
         image: busybox:latest
-        imagePullPolicy: IfNotPresent
         command: ["sh", "-c", "echo 'Initializing before K6 test'"]
 
     image: negis:latest
