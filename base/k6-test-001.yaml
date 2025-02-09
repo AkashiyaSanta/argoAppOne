@@ -18,7 +18,7 @@ spec:
   # arguments: --out output-statsd
   runner:
     # xk6 をビルドして作成した Docker イメージを指定.
-    image: yourusername/custom-k6:latest
+    image: negis:latest
     imagePullPolicy: Never
     # env:
       # ここから環境変数を定義する.
