@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: k6-test-1
 resources:
   # - k6-test.yaml
-  - k6-test-000.yaml
+  - k6-test-001.yaml
